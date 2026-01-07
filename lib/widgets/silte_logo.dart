@@ -10,7 +10,7 @@ class SilteLogo extends StatelessWidget {
       onTap: () {
         
       },
-      child: Text("Luis Vega", style: TextStyle(
+      child: Text("LV", style: TextStyle(
         fontSize: 22,
         fontWeight: FontWeight.bold,
         color: CustomColor.yellowPrimary
