@@ -18,12 +18,12 @@ class HeaderDesktop extends StatelessWidget {
         children: [
           SilteLogo(),
           Spacer(),
-          for(int i = 0; i<navTitles.length ; i++)
+          for(int i = 0; i<navTitlesSpanish.length ; i++)
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: TextButton(
                 onPressed: (){}, 
-                child: Text(navTitles[i], 
+                child: Text(navTitlesSpanish[i], 
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,

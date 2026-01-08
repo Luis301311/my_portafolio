@@ -32,7 +32,7 @@ class DrawerMobile extends StatelessWidget {
               fontSize: 16
             ) ,
             leading: Icon(navIcons[i]),
-            title: Text(navTitles[i]),
+            title: Text(navTitlesSpanish[i]),
             onTap: (){
 
             },
