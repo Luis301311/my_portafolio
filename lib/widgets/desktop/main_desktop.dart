@@ -16,6 +16,7 @@ class _MainDesktopState extends State<MainDesktop> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size; 
     final screenWidth = screenSize.width;
+    final screenHeigth = screenSize.height;
     return 
     Container(
     margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -226,7 +227,7 @@ class _MainDesktopState extends State<MainDesktop> {
                 children: [
                   //AVATAR
                   Padding(
-                    padding:  EdgeInsets.only(left: screenWidth/50, top: 120.0),
+                    padding:  EdgeInsets.only(left: screenWidth/50, top: screenHeigth/100),
                     child: PulsingBorder(
                       color: CustomColor.yellowPrimary,
                       child: Container(
@@ -253,7 +254,7 @@ class _MainDesktopState extends State<MainDesktop> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 250.0),
+                        padding:  EdgeInsets.only(top: screenHeigth/10),
                         child: Text("Conoce mas", style: TextStyle(fontSize: screenWidth/70,),),
                       ),
                       Padding(
