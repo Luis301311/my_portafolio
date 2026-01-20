@@ -13,7 +13,7 @@ class MainMobile extends StatelessWidget {
         vertical: 40.0, 
         horizontal: 30.0
       ),
-      height:screenHeight,
+      height:650,
       constraints: const BoxConstraints(minHeight: 560.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
