@@ -28,6 +28,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -56,23 +57,17 @@ class _HomePageState extends State<HomePage> {
                 if(constraints.maxWidth >= kMinDesktopWidth)
                 const MainDesktop() else MainMobile(),
                 
-      
                 //SKILL  
                 if(constraints.maxWidth >= kMinDesktopWidth)
                 const SkillDesktop() else SkillMobile(),
 
-
-
                 //PROJECTS
-               ProyectsDesktop(), 
+                ProyectsDesktop(), 
   
-
                 //CONTACTO
                 ContactDesktop(),
-
               ],
             )
-            
           ),
          );
       }
