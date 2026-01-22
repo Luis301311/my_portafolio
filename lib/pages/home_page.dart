@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_portafolio/constants/colors.dart';
+import 'package:my_portafolio/constants/proyect_items.dart';
 import 'package:my_portafolio/constants/size.dart';
 import 'package:my_portafolio/constants/skill_items.dart';
+import 'package:my_portafolio/widgets/desktop/contact._desktop.dart';
 import 'package:my_portafolio/widgets/desktop/header_desktop.dart';
 import 'package:my_portafolio/widgets/desktop/main_desktop.dart';
+import 'package:my_portafolio/widgets/desktop/proyects_desktop.dart';
 import 'package:my_portafolio/widgets/desktop/skill_desktop.dart';
 import 'package:my_portafolio/widgets/hover_scale.dart';
 import 'package:my_portafolio/widgets/mobile/drawer_mobile.dart';
@@ -25,8 +28,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size; 
-    final screenWidth = screenSize.width;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Scaffold(
@@ -60,22 +61,15 @@ class _HomePageState extends State<HomePage> {
                 if(constraints.maxWidth >= kMinDesktopWidth)
                 const SkillDesktop() else SkillMobile(),
 
-                Container(
-                  
-                  height: 500,
-                  width: double.maxFinite,
-                ),
+
+
                 //PROJECTS
-                Container(
-                  height: 500,
-                  width: double.maxFinite,
-                  color: Colors.blueGrey,
-                ),
-                //FOOTER  
-                Container(
-                  height: 500,
-                  width: double.maxFinite,
-                ),
+               ProyectsDesktop(), 
+  
+
+                //CONTACTO
+                ContactDesktop(),
+
               ],
             )
             

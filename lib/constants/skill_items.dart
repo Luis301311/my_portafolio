@@ -31,7 +31,7 @@ const List<Map> skillItems = [
     "title": "Typescript",
   },
   {
-    "img": "assets/c#.png",
+    "img": "assets/Cchar.png",
     "title": "C#",
   },
   {

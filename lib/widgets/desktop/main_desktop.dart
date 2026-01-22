@@ -36,8 +36,6 @@ class _MainDesktopState extends State<MainDesktop> {
     child: Stack(
     fit: StackFit.expand,
     children: [
-
-
       Center(
         child: Transform.scale(
           scale: screenWidth/1000 ,
