@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portafolio/constants/colors.dart';
 
@@ -9,7 +10,7 @@ class ContactDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     final screenWidth = screenSize.width; 
     return Container(
-      height: screenWidth * 0.3,
+      height: screenWidth * 0.45,
       width: double.infinity,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -51,11 +52,11 @@ class ContactDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Contáctame",
+                  "CONTACTAME",
                   style: TextStyle(
                     fontSize: screenWidth * 0.02,
                     fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
+                    color: CustomColor.yellowPrimary,
                   ),
                 ),
 
@@ -72,13 +73,13 @@ class ContactDesktop extends StatelessWidget {
 
                 SizedBox(height: screenWidth * 0.02),
 
-                Row(
+                Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // FORMULARIO
                     Container(
                       width: screenWidth * 0.5,
-                      padding: const EdgeInsets.all(20),
+                      padding:  EdgeInsets.all(screenWidth * 0.02),
                       decoration: BoxDecoration(
                         color: CustomColor.bgLight2,
                         borderRadius: BorderRadius.circular(20),
@@ -86,7 +87,7 @@ class ContactDesktop extends StatelessWidget {
                       child: Column(
                         children: [
                           TextField(
-                            style: TextStyle(color: CustomColor.whitePrimary),
+                            style: TextStyle(color: CustomColor.whitePrimary, fontSize: screenWidth * 0.01),
                             decoration: InputDecoration(
                               hintText: "Nombre",
                               hintStyle: TextStyle(color: CustomColor.whiteSecondary),
@@ -98,9 +99,9 @@ class ContactDesktop extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          SizedBox(height: screenWidth * 0.01),
                           TextField(
-                            style: TextStyle(color: CustomColor.whitePrimary),
+                            style: TextStyle(color: CustomColor.whitePrimary, fontSize: screenWidth * 0.01),
                             decoration: InputDecoration(
                               hintText: "Email",
                               hintStyle: TextStyle(color: CustomColor.whiteSecondary),
@@ -112,10 +113,10 @@ class ContactDesktop extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 15),
+                          SizedBox(height: screenWidth * 0.01),
                           TextField(
                             maxLines: 4,
-                            style: TextStyle(color: CustomColor.whitePrimary),
+                            style: TextStyle(color: CustomColor.whitePrimary, fontSize: screenWidth * 0.01),
                             decoration: InputDecoration(
                               hintText: "Mensaje",
                               hintStyle: TextStyle(color: CustomColor.whiteSecondary),
@@ -127,10 +128,10 @@ class ContactDesktop extends StatelessWidget {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          SizedBox(height: screenWidth * 0.02),
                           SizedBox(
                             width: double.infinity,
-                            height: 45,
+                            height: screenWidth * 0.03,
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: CustomColor.yellowPrimary,
@@ -139,11 +140,12 @@ class ContactDesktop extends StatelessWidget {
                                 ),
                               ),
                               onPressed: () {},
-                              child: const Text(
+                              child:  Text(
                                 "Enviar mensaje",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                  color: CustomColor.bgLight1,
+                                  fontSize: screenWidth * 0.01
                                 ),
                               ),
                             ),
@@ -152,17 +154,33 @@ class ContactDesktop extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(width: 40),
 
-                    Row(
-                      children: [
-                        Icon(Icons.location_on, color: CustomColor.yellowPrimary),
-                        const SizedBox(width: 10),
-                        Text(
-                          "Colombia",
-                          style: TextStyle(color: CustomColor.whitePrimary),
-                        ),
-                      ],
+
+                    Padding(
+                      padding:  EdgeInsets.all(screenWidth * 0.02),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.location_on, color: CustomColor.yellowPrimary),
+                          AnimatedTextKit(
+                            repeatForever: true,
+                            animatedTexts: [
+                              ColorizeAnimatedText(
+                                'Colombia 🇨🇴',
+                                textStyle: TextStyle(
+                                  fontSize: screenWidth * 0.02,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                colors: [
+                                  Colors.yellow,
+                                  Colors.blue,
+                                  Colors.red,
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),

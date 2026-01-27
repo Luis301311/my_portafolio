@@ -4,15 +4,15 @@ const List<Map> platformItems = [
     "title": "Android Dev",
   },
   {
-    "img": "assets/web_icon.png",
+    "img": "assets/web.png",
     "title": "Web Dev",
   },
   {
-    "img": "assets/ios_icon.png",
+    "img": "assets/app-store.png",
     "title": "IOS Dev",
   },
   {
-    "img": "assets/desktop_icon.png",
+    "img": "assets/computer.png",
     "title": "Desktop Dev",
   }
 ];

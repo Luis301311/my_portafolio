@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portafolio/constants/colors.dart';
+import 'package:my_portafolio/constants/open_link.dart';
 import 'package:my_portafolio/constants/proyect_items.dart';
 import 'package:my_portafolio/widgets/hover_scale.dart';
 
@@ -76,7 +77,7 @@ class ProyectsDesktop extends StatelessWidget {
                   style: TextStyle(
                     fontSize: screenWidth * 0.02,
                     fontWeight: FontWeight.bold,
-                    color: CustomColor.whitePrimary,
+                    color: CustomColor.yellowPrimary,
                   ), 
                 ),
               ),
@@ -85,6 +86,9 @@ class ProyectsDesktop extends StatelessWidget {
                 children: [
                   for( int i = 0; i< proyectItems.length; i ++)
                   HoverScale(
+                    onTap: () {
+                      openUrl(proyectItems[i]["doc"]);
+                    },
                     scale: 1.1,
                     child: Container(
                       clipBehavior: Clip.antiAlias,

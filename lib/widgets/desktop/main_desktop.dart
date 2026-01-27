@@ -1,6 +1,8 @@
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portafolio/constants/colors.dart';
+import 'package:my_portafolio/constants/open_link.dart';
 import 'package:my_portafolio/widgets/hover_scale.dart';
 import 'package:my_portafolio/widgets/pulsing_border.dart';
 class MainDesktop extends StatefulWidget {
@@ -117,13 +119,27 @@ class _MainDesktopState extends State<MainDesktop> {
                           height: 1.5,
                           fontWeight: FontWeight.w900
                         ),),
-                        Text("LUIS VEGA",
-                        style: TextStyle(
-                          color: CustomColor.whitePrimary,
-                          fontSize: screenWidth/10,
-                          height: 1,
-                          fontWeight: FontWeight.bold,
-                        ),),
+                        AnimatedTextKit(
+                          repeatForever: true,
+                          isRepeatingAnimation: true,
+                          pause: Duration(milliseconds: 0),
+                          animatedTexts: [
+                            ColorizeAnimatedText(
+                              "LUIS VEGA",
+                              speed: Duration(milliseconds: 300),
+                              textStyle: TextStyle(
+                                fontSize: screenWidth / 10,
+                                height: 1,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              colors: [
+                                CustomColor.yellowSecondary,
+                                CustomColor.whitePrimary,
+                                CustomColor.yellowSecondary
+                              ],
+                            ),
+                          ],
+                        ),
                         Text("Ingeniero de sistemas & Tecnico en Sistemas",
                         style: TextStyle(
                           color: CustomColor.hintDark,
@@ -148,11 +164,14 @@ class _MainDesktopState extends State<MainDesktop> {
                           
                         },
                         child: HoverScale(
+                          onTap: () {
+                            openUrl("https://linkedin.com/in/luis-vega-26836b224");
+                          },
                           scale: 1.1,
                           child: Column(
                             children: [
                               Image.asset(
-                                "linkedinnew.png",
+                                "assets/linkedinnew.png",
                                 height: screenWidth/15,),
                               Text("Linkedin", style: TextStyle(
                                 color: CustomColor.whitePrimary,
@@ -171,12 +190,15 @@ class _MainDesktopState extends State<MainDesktop> {
                           
                         },
                         child: HoverScale(
+                          onTap: () {
+                            openUrl("https://github.com/Luis301311");
+                          },
                           scale: 1.1,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
-                                "git.png",
+                                "assets/git.png",
                                 height: screenWidth/15,),
                               Text("GitHud", style: TextStyle(
                                 color: CustomColor.whitePrimary,
@@ -209,12 +231,17 @@ class _MainDesktopState extends State<MainDesktop> {
                       ),
                       padding: EdgeInsets.all(15)
                     ),  
-                    child: Row(
-                      children: [
-                        Image.asset("correo-electronico.png", height: screenWidth/40,),
-                        SizedBox(width: screenWidth/200,),
-                        Text("Luisvm301@gmail.com", style: TextStyle(color: CustomColor.whitePrimary, fontSize: screenWidth/70,),)
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        openEmail(); 
+                      },
+                      child: Row(
+                        children: [
+                          Image.asset("assets/correo-electronico.png", height: screenWidth/40,),
+                          SizedBox(width: screenWidth/200,),
+                          Text("Luisvm301@gmail.com", style: TextStyle(color: CustomColor.whitePrimary, fontSize: screenWidth/70,),)
+                        ],
+                      ),
                     ) 
                   ),
                 ),
@@ -236,7 +263,7 @@ class _MainDesktopState extends State<MainDesktop> {
                             scale: 1.01,
                             child: CircleAvatar(
                               radius: screenWidth / 7,
-                              backgroundImage: AssetImage("avatar2.1.jpg"),
+                              backgroundImage: AssetImage("assets/avatar2.1.jpg"),
                               backgroundColor: Colors.grey[200], // color de fondo dentro del avatar
                             ),
                           ),
@@ -268,7 +295,7 @@ class _MainDesktopState extends State<MainDesktop> {
                         scale: 1.2,
                         child: Padding(
                         padding:  EdgeInsets.only(left: screenWidth/50, top: 17.0),
-                        child: Image.asset("flecha-Correcta.png",
+                        child: Image.asset("assets/flecha-Correcta.png",
                           height: screenWidth/10,),
                         ),
                       ),
@@ -283,4 +310,8 @@ class _MainDesktopState extends State<MainDesktop> {
       ],
     ),
 );
-}}
+}
+}
+
+
+

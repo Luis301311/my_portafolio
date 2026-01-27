@@ -18,9 +18,9 @@ class SkillDesktop extends StatelessWidget {
         children: [
           Text("HABILIDADES",
             style: TextStyle(
-              fontSize: 24,
+              fontSize: screenWidth * 0.02,
               fontWeight: FontWeight.bold,
-              color: CustomColor.whitePrimary,
+              color: CustomColor.yellowPrimary,
             ),
           ),
           SizedBox(height: 50,),
@@ -51,11 +51,18 @@ class SkillDesktop extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5)
                         ),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(platformItems[i]["img"],
+                            Padding(
+                              padding:  EdgeInsets.all(screenWidth * 0.006),
+                              child: Image.asset(
+                                platformItems[i]["img"],
+                                fit: BoxFit.fill,
+                                height: screenWidth * 0.05,
+                                width: screenWidth *0.05,
+                              ),
                             ),
-                            SizedBox(width: screenWidth/200,),
+                            SizedBox(width: screenWidth *0.010,),
                             Text(platformItems[i]["title"], style: TextStyle(fontSize: screenWidth/60)),
                           ],
                         ),
