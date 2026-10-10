@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="$FLUTTER_BASE_HREF">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luis Vega · Desarrollador Flutter y full stack</title>
+  <meta name="description" content="Portafolio de Luis Vega, desarrollador Flutter y full stack en Valledupar. Apps con Flutter, APIs con NestJS y FastAPI, despliegue con Docker en AWS.">
+  <meta name="theme-color" content="#17181F">
+
+  <!-- Vista previa al compartir el link (LinkedIn, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luis Vega · Desarrollador Flutter y full stack">
+  <meta property="og:description" content="Apps con Flutter llevadas hasta producción: APIs, bases de datos y despliegue en AWS. Disponible para prácticas y primer empleo.">
+  <meta property="og:url" content="https://portafolio-a5a28.web.app/">
+  <meta property="og:image" content="https://portafolio-a5a28.web.app/icons/Icon-512.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="my_portafolio">
+  <meta name="apple-mobile-web-app-title" content="Luis Vega">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>my_portafolio</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #17181F; }
+    #loader { position: fixed; inset: 0; display: grid; place-items: center; color: #6F7182; font: 14px/1.4 system-ui, sans-serif; letter-spacing: .04em; }
+    #loader b { color: #FFAF29; font-size: 28px; display: block; text-align: center; margin-bottom: 8px; }
+  </style>
 </head>
 <body>
+  <div id="loader"><div><b>LV</b>Cargando portafolio…</div></div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var l = document.getElementById('loader');
+      if (l) l.remove();
+    });
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

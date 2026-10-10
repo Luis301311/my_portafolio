@@ -23,4 +23,12 @@ const List<Map<String, dynamic>>  proyectItems =[
     "skills" : "assets/react_icon.png",
     "doc": "https://drive.google.com/file/d/1lWjpxWIaOuEsqqxI7fjt3LaOdnOxrM9V/view?usp=sharing"
   },
+  {
+    "title": "La Carta",
+    "Context" : "Aplicación de menú digital que permite a los usuarios explorar productos, realizar pedidos de manera rápida y consultar la ubicación del establecimiento en tiempo real. Diseñada para mejorar la experiencia del cliente y optimizar la gestión de pedidos",
+    "img": "assets/iconLaCarta.png",
+    "compatible" : ["assets/web_icon.png"],
+    "skills" : "assets/flutter.png",
+    "doc": "https://lacarta-1a.web.app/"
+  },
 ];

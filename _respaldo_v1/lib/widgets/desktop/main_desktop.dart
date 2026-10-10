@@ -263,7 +263,7 @@ class _MainDesktopState extends State<MainDesktop> {
                             scale: 1.01,
                             child: CircleAvatar(
                               radius: screenWidth / 7,
-                              backgroundImage: AssetImage("assets/avatar2.1.jpg"),
+                              backgroundImage: AssetImage("assets/miFotoPerfil.png"),
                               backgroundColor: Colors.grey[200], // color de fondo dentro del avatar
                             ),
                           ),
@@ -295,7 +295,7 @@ class _MainDesktopState extends State<MainDesktop> {
                         scale: 1.2,
                         child: Padding(
                         padding:  EdgeInsets.only(left: screenWidth/50, top: 17.0),
-                        child: Image.asset("assets/flecha-Correcta.png",
+                        child: Image.network("https://res.cloudinary.com/dkxiwcgla/image/upload/v1774975361/flecha-correcta_ek3erl.png",
                           height: screenWidth/10,),
                         ),
                       ),
