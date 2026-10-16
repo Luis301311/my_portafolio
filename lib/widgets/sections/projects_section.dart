@@ -80,9 +80,12 @@ class _ProjectCard extends StatelessWidget {
           const SizedBox(height: 14),
           TagList(project.tags),
           if (stretch) const Spacer(),
-          if (project.link != null) ...[
+          if (project.link != null || project.repo != null) ...[
             const SizedBox(height: 14),
-            _LinkRow(link: project.link!),
+            _LinkRow(links: [
+              if (project.link != null) project.link!,
+              if (project.repo != null) project.repo!,
+            ]),
           ],
         ],
       ),
@@ -202,21 +205,34 @@ class _ProjectTile extends StatelessWidget {
 }
 
 class _LinkRow extends StatelessWidget {
-  const _LinkRow({required this.link});
-  final ProjectLink link;
+  const _LinkRow({required this.links});
+  final List<ProjectLink> links;
 
   @override
   Widget build(BuildContext context) {
-    final url = link.url;
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.only(top: 14),
       decoration: const BoxDecoration(
         border: Border(top: BorderSide(color: AppColors.line)),
       ),
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: url == null
+      child: Wrap(
+        spacing: 24,
+        runSpacing: 8,
+        children: [for (final l in links) _ProjectLinkItem(link: l)],
+      ),
+    );
+  }
+}
+
+class _ProjectLinkItem extends StatelessWidget {
+  const _ProjectLinkItem({required this.link});
+  final ProjectLink link;
+
+  @override
+  Widget build(BuildContext context) {
+    final url = link.url;
+    return url == null
             ? Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -231,9 +247,7 @@ class _LinkRow extends StatelessWidget {
                 hoverColor: AppColors.accentHover,
                 style: AppText.body(14.5, color: AppColors.accent, weight: FontWeight.w600),
                 onTap: () => openUrl(url),
-              ),
-      ),
-    );
+              );
   }
 }
 

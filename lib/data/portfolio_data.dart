@@ -22,6 +22,7 @@ class Project {
     this.tileColor = const Color(0xFFEFEBE2),
     this.logoCover = false,
     this.link,
+    this.repo,
     this.featured = false,
   });
 
@@ -34,6 +35,9 @@ class Project {
   final Color tileColor;
   final bool logoCover;
   final ProjectLink? link;
+
+  /// Enlace al código (GitHub). Se muestra junto a [link].
+  final ProjectLink? repo;
   final bool featured;
 }
 
@@ -52,15 +56,20 @@ const projects = <Project>[
   ),
   Project(
     title: 'La Carta',
-    meta: ['Web', 'Restaurantes'],
+    meta: ['Web · API', 'SaaS para restaurantes', 'En producción'],
     description:
-        'Menú digital para restaurantes: los clientes exploran productos, hacen '
-        'pedidos y ven la ubicación del local. Cada restaurante administra su '
-        'propio menú desde un panel.',
-    tags: ['Flutter', 'Firebase', 'GetX'],
+        'Plataforma multi-restaurante de menú digital y pedidos. Cada negocio '
+        'administra su menú, horarios, color de marca y pagos (efectivo o '
+        'transferencia Bre-B con comprobante) desde un panel, y gestiona los '
+        'pedidos casi en tiempo real con avisos por WhatsApp. Migré el proyecto '
+        'de Firebase a una API en NestJS con PostgreSQL, roles con JWT, '
+        'migraciones y almacenamiento de imágenes intercambiable (puertos y '
+        'adaptadores), desplegada en Render, Neon y Cloudinary.',
+    tags: ['Flutter', 'GetX', 'NestJS', 'TypeORM', 'PostgreSQL', 'JWT', 'Cloudinary', 'Render'],
     logo: 'assets/la_carta_icon.png',
     logoCover: true,
-    link: ProjectLink('Ver demo', 'https://lacarta-1a.web.app/'),
+    link: ProjectLink('Ver demo en vivo', 'https://lacarta-web.onrender.com/burger_house'),
+    repo: ProjectLink('Código', 'https://github.com/Luis301311/la_carta'),
   ),
   Project(
     title: 'ProdTrack',
